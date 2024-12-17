@@ -4,7 +4,6 @@ import allure
 import urls
 
 
-@allure.title('Методы для работы с заказами')
 class OrderMethods:
 
     @allure.step('Метод для создания заказа')
@@ -17,4 +16,4 @@ class OrderMethods:
     @allure.step('Метод для получения списка заказов')
     def get_orders_list(self):
         response = requests.get(f'{urls.BASE_URL}{urls.ORDER_URL}')
-        return [response.status_code, response.json()]
+        return [response.status_code, response.text]
